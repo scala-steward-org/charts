@@ -1,0 +1,46 @@
+scalaStewardArgs:
+  - --workspace
+  - /var/scala-steward/workspace
+  - --repos-file
+  - /opt/scala-steward/repos.md
+  - --vcs-api-host
+  - https://api.github.com
+  - --git-ask-pass
+  - /opt/scala-steward/password.sh
+  - --scalafix-migrations
+  - /opt/scala-steward/scalafix.conf
+  - --do-not-fork
+
+additionalScalaStewardArgs:
+  - --git-author-email
+  - MY_EMAIL
+  - --vcs-login
+  - MY_LOGIN
+
+additionalScalaStewardEnvs: {}
+repos: []
+scalafixConfig: |
+  disableDefaults = false
+  migrations = []
+
+gitSecret: ""
+existingGitSecretName: ""
+image:
+  tag: 0.5.0-224-eba925b5-SNAPSHOT
+  repository: fthomas/scala-steward
+  pullPolicy: IfNotPresent
+
+schedule: "@daily"
+concurrencyPolicy: "Forbid"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi

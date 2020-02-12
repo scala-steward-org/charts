@@ -1,0 +1,55 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ include "scala-steward.fullname" . }}
+  labels:
+    {{- include "scala-steward.labels" . | nindent 4 }}
+spec:
+  schedule: "{{- .Values.schedule -}}"
+  concurrencyPolicy: "{{- .Values.concurrencyPolicy -}}"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          volumes:
+            - name: opt
+              configMap:
+                name: {{ include "scala-steward.fullname" . }}-configmap
+                items:
+                  - key: repos.md
+                    path: repos.md
+                  - key: scalafix.conf
+                    path: scalafix.conf
+                  - key: password.sh
+                    path: password.sh
+                    mode: 0777
+          containers:
+          - name: "{{- include "scala-steward.fullname" . -}}"
+            image: "{{- .Values.image.repository -}}:{{- .Values.image.tag -}}"
+            imagePullPolicy: "{{- .Values.image.pullPolicy -}}"
+            resources:
+{{ toYaml .Values.resources | indent 14 }}
+            args:
+            {{- range .Values.scalaStewardArgs }}
+            - {{ . }}
+            {{- end }}
+            {{- range .Values.additionalScalaStewardArgs }}
+            - {{ . }}
+            {{- end }}
+            env:
+              - name: GIT_PASS
+                valueFrom:
+                  secretKeyRef:
+                    name: {{ if .Values.existingGitSecretName }}
+                          {{- .Values.existingGitSecretName | quote -}}
+                          {{- else -}}
+                          "{{- include "scala-steward.fullname" . -}}-secret"
+                          {{- end }}
+                    key: gitSecret
+{{- if .Values.additionalScalaStewardEnvs }}
+{{ toYaml .Values.additionalScalaStewardEnvs | indent 14 }}
+{{- end }}
+            volumeMounts:
+              - mountPath: /opt/scala-steward
+                name: opt
