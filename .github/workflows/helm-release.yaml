@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - "scala-steward/**"
+      - "charts/**"
 
 jobs:
   release:
