@@ -26,7 +26,7 @@ scalafixConfig: |
 gitSecret: ""
 existingGitSecretName: ""
 image:
-  tag: 0.5.0-224-eba925b5-SNAPSHOT
+  tag: 0.5.0-460-aad4fc41-SNAPSHOT
   repository: fthomas/scala-steward
   pullPolicy: IfNotPresent
 
