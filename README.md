@@ -1,1 +1,1 @@
-# scala-steward-helm-chart
+# Scala Steward Helm Chart
