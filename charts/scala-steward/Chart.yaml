@@ -2,6 +2,6 @@ apiVersion: v2
 name: scala-steward
 description: A Helm chart for scala-steward
 type: application
-version: 0.1.1
+version: 0.1.2
 appVersion: 0.5.0
 icon: "https://raw.githubusercontent.com/fthomas/scala-steward/master/data/images/scala-steward-logo-circle-0.png"
