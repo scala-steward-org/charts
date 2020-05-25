@@ -1,7 +1,17 @@
 apiVersion: v2
 name: scala-steward
-description: A Helm chart for scala-steward
 type: application
 version: 0.1.2
 appVersion: 0.5.0
+description: A Helm chart for scala-steward
+keywords:
+  - scala
+  - scala-steward
+  - dependencies
+home: https://github.com/fthomas/scala-steward
+sources:
+  - https://github.com/fthomas/scala-steward
+maintainers:
+  - name: Garner
+    email: "garnercorp@users.noreply.github.com"
 icon: "https://raw.githubusercontent.com/fthomas/scala-steward/master/data/images/scala-steward-logo-circle-0.png"
