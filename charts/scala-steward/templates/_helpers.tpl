@@ -50,3 +50,7 @@ Selector labels
 app.kubernetes.io/name: {{ include "scala-steward.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end -}}
+
+{{- define "scala-steward.pvcName" -}}
+{{- printf "%s-%s" (.Release.Name | trunc 60 | trimSuffix "-") "pvc" -}}
+{{- end -}}
