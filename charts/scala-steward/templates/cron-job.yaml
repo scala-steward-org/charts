@@ -12,18 +12,6 @@ spec:
       template:
         spec:
           restartPolicy: Never
-          volumes:
-            - name: opt
-              configMap:
-                name: {{ include "scala-steward.fullname" . }}-configmap
-                items:
-                  - key: repos.md
-                    path: repos.md
-                  - key: scalafix.conf
-                    path: scalafix.conf
-                  - key: password.sh
-                    path: password.sh
-                    mode: 0777
           containers:
           - name: "{{- include "scala-steward.fullname" . -}}"
             image: "{{- .Values.image.repository -}}:{{- .Values.image.tag -}}"
@@ -53,3 +41,25 @@ spec:
             volumeMounts:
               - mountPath: /opt/scala-steward
                 name: opt
+              - mountPath: /var/scala-steward/workspace
+                name: workspace
+          volumes:
+            - name: opt
+              configMap:
+                name: {{ include "scala-steward.fullname" . }}-configmap
+                items:
+                  - key: repos.md
+                    path: repos.md
+                  - key: scalafix.conf
+                    path: scalafix.conf
+                  - key: password.sh
+                    path: password.sh
+                    mode: 0777
+            {{- if .Values.persistence.enabled }}
+            - name: workspace
+              persistentVolumeClaim:
+                claimName: {{ include "scala-steward.pvcName" . }}
+            {{- else }}
+            - name: workspace
+              emptyDir: {}
+            {{- end }}
