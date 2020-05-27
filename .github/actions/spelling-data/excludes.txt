@@ -1,0 +1,3 @@
+/values\.yaml$
+\.[^./]*ignore$
+^\.github/actions/spelling-data/
