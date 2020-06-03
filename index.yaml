@@ -3,6 +3,27 @@ entries:
   scala-steward:
   - apiVersion: v2
     appVersion: 0.5.0
+    created: "2020-06-03T15:50:05.30052366Z"
+    description: A Helm chart for scala-steward
+    digest: 51b2d2b1d6af4a6ffece0cac1905b9c1225b89841c4b79c1dc2283fd8fb07b7c
+    home: https://github.com/fthomas/scala-steward
+    icon: https://raw.githubusercontent.com/fthomas/scala-steward/master/data/images/scala-steward-logo-circle-0.png
+    keywords:
+    - scala
+    - scala-steward
+    - dependencies
+    maintainers:
+    - email: helm-charts@opensource.garnercorp.com
+      name: Garner
+    name: scala-steward
+    sources:
+    - https://github.com/fthomas/scala-steward
+    type: application
+    urls:
+    - https://github.com/GarnerCorp/charts/releases/download/scala-steward-0.2.2/scala-steward-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: 0.5.0
     created: "2020-06-01T17:24:41.490071898Z"
     description: A Helm chart for scala-steward
     digest: 3102f528c105cd289260255c9179be630ae6869decd6569ce05ee24e1da8ba60
