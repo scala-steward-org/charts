@@ -19,6 +19,7 @@ metadata
 Namespace
 nindent
 noreply
+opensource
 plugins
 png
 printf
