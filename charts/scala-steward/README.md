@@ -5,5 +5,6 @@
 ## TL;DR;
 
 ```sh
-helm install my-release garnercorp/scala-steward
+helm repo add scala-steward-org https://scala-steward-org.github.io/charts
+helm install my-release scala-steward-org/scala-steward
 ```
