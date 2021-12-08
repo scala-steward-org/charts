@@ -6,8 +6,8 @@ entries:
     created: "2020-06-03T15:50:05.30052366Z"
     description: A Helm chart for scala-steward
     digest: 51b2d2b1d6af4a6ffece0cac1905b9c1225b89841c4b79c1dc2283fd8fb07b7c
-    home: https://github.com/fthomas/scala-steward
-    icon: https://raw.githubusercontent.com/fthomas/scala-steward/master/data/images/scala-steward-logo-circle-0.png
+    home: https://github.com/scala-steward-org/scala-steward
+    icon: https://raw.githubusercontent.com/scala-steward-org/scala-steward/master/data/images/scala-steward-logo-circle-0.png
     keywords:
     - scala
     - scala-steward
@@ -17,7 +17,7 @@ entries:
       name: Garner
     name: scala-steward
     sources:
-    - https://github.com/fthomas/scala-steward
+    - https://github.com/scala-steward-org/scala-steward
     type: application
     urls:
     - https://github.com/scala-steward-org/charts/releases/download/scala-steward-0.2.2/scala-steward-0.2.2.tgz
@@ -27,8 +27,8 @@ entries:
     created: "2020-06-01T17:24:41.490071898Z"
     description: A Helm chart for scala-steward
     digest: 3102f528c105cd289260255c9179be630ae6869decd6569ce05ee24e1da8ba60
-    home: https://github.com/fthomas/scala-steward
-    icon: https://raw.githubusercontent.com/fthomas/scala-steward/master/data/images/scala-steward-logo-circle-0.png
+    home: https://github.com/scala-steward-org/scala-steward
+    icon: https://raw.githubusercontent.com/scala-steward-org/scala-steward/master/data/images/scala-steward-logo-circle-0.png
     keywords:
     - scala
     - scala-steward
@@ -38,7 +38,7 @@ entries:
       name: Garner
     name: scala-steward
     sources:
-    - https://github.com/fthomas/scala-steward
+    - https://github.com/scala-steward-org/scala-steward
     type: application
     urls:
     - https://github.com/scala-steward-org/charts/releases/download/scala-steward-0.2.1/scala-steward-0.2.1.tgz
@@ -48,8 +48,8 @@ entries:
     created: "2020-05-26T17:36:40.910120211Z"
     description: A Helm chart for scala-steward
     digest: 18908f4222d56651619c84c7e29b77808828f233fc61081a5003c2de5f9d7c6c
-    home: https://github.com/fthomas/scala-steward
-    icon: https://raw.githubusercontent.com/fthomas/scala-steward/master/data/images/scala-steward-logo-circle-0.png
+    home: https://github.com/scala-steward-org/scala-steward
+    icon: https://raw.githubusercontent.com/scala-steward-org/scala-steward/master/data/images/scala-steward-logo-circle-0.png
     keywords:
     - scala
     - scala-steward
@@ -59,7 +59,7 @@ entries:
       name: Garner
     name: scala-steward
     sources:
-    - https://github.com/fthomas/scala-steward
+    - https://github.com/scala-steward-org/scala-steward
     type: application
     urls:
     - https://github.com/scala-steward-org/charts/releases/download/scala-steward-0.2.0/scala-steward-0.2.0.tgz
@@ -69,8 +69,8 @@ entries:
     created: "2020-05-25T20:02:57.820809235Z"
     description: A Helm chart for scala-steward
     digest: 5e09de192e31cf3be4b844f7bae6f40bf9a3ae3dcc8a4eadb0a40bc96dd21e68
-    home: https://github.com/fthomas/scala-steward
-    icon: https://raw.githubusercontent.com/fthomas/scala-steward/master/data/images/scala-steward-logo-circle-0.png
+    home: https://github.com/scala-steward-org/scala-steward
+    icon: https://raw.githubusercontent.com/scala-steward-org/scala-steward/master/data/images/scala-steward-logo-circle-0.png
     keywords:
     - scala
     - scala-steward
@@ -80,7 +80,7 @@ entries:
       name: Garner
     name: scala-steward
     sources:
-    - https://github.com/fthomas/scala-steward
+    - https://github.com/scala-steward-org/scala-steward
     type: application
     urls:
     - https://github.com/scala-steward-org/charts/releases/download/scala-steward-0.1.2/scala-steward-0.1.2.tgz
