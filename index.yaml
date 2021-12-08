@@ -20,7 +20,7 @@ entries:
     - https://github.com/fthomas/scala-steward
     type: application
     urls:
-    - https://github.com/GarnerCorp/charts/releases/download/scala-steward-0.2.2/scala-steward-0.2.2.tgz
+    - https://github.com/scala-steward-org/charts/releases/download/scala-steward-0.2.2/scala-steward-0.2.2.tgz
     version: 0.2.2
   - apiVersion: v2
     appVersion: 0.5.0
@@ -41,7 +41,7 @@ entries:
     - https://github.com/fthomas/scala-steward
     type: application
     urls:
-    - https://github.com/GarnerCorp/charts/releases/download/scala-steward-0.2.1/scala-steward-0.2.1.tgz
+    - https://github.com/scala-steward-org/charts/releases/download/scala-steward-0.2.1/scala-steward-0.2.1.tgz
     version: 0.2.1
   - apiVersion: v2
     appVersion: 0.5.0
@@ -62,7 +62,7 @@ entries:
     - https://github.com/fthomas/scala-steward
     type: application
     urls:
-    - https://github.com/GarnerCorp/charts/releases/download/scala-steward-0.2.0/scala-steward-0.2.0.tgz
+    - https://github.com/scala-steward-org/charts/releases/download/scala-steward-0.2.0/scala-steward-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.5.0
@@ -83,6 +83,6 @@ entries:
     - https://github.com/fthomas/scala-steward
     type: application
     urls:
-    - https://github.com/GarnerCorp/charts/releases/download/scala-steward-0.1.2/scala-steward-0.1.2.tgz
+    - https://github.com/scala-steward-org/charts/releases/download/scala-steward-0.1.2/scala-steward-0.1.2.tgz
     version: 0.1.2
 generated: "2020-05-25T20:02:57.611109599Z"
