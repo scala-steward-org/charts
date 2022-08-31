@@ -3,13 +3,12 @@ args
 config
 configmap
 Cron
+Envs
 filetype
 fthomas
 fullname
 garnercorp
-github
 githubusercontent
-helmv
 http
 kube
 kubectl
@@ -29,7 +28,6 @@ scalafix
 stefanprodan
 tpl
 trunc
-ubuntu
 unshallow
 Workflow
 www
