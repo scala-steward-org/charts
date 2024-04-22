@@ -9,6 +9,10 @@
 # version suffix <word>v#
 (?:(?<=[A-Z]{2})V|(?<=[a-z]{2}|[A-Z]{2})v)\d+(?:\b|(?=[a-zA-Z_]))
 
+# hit-count: 1 file-count: 1
+# go install
+go install(?:\s+[a-z]+\.[-@\w/.]+)+
+
 # Questionably acceptable forms of `in to`
 # Personally, I prefer `log into`, but people object
 # https://www.tprteaching.com/log-into-log-in-to-login/
