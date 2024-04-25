@@ -18,6 +18,7 @@ ignore$
 \.cer$
 \.class$
 \.coveragerc$
+\.crl$
 \.crt$
 \.csr$
 \.dll$
@@ -25,6 +26,7 @@ ignore$
 \.drawio$
 \.DS_Store$
 \.eot$
+\.eps$
 \.exe$
 \.gif$
 \.git-blame-ignore-revs$
@@ -60,17 +62,21 @@ ignore$
 \.pylintrc$
 \.qm$
 \.s$
+\.sig$
 \.so$
 \.svgz?$
 \.sys$
 \.tar$
+\.tgz$
 \.tiff?$
 \.ttf$
 \.wav$
 \.webm$
 \.webp$
 \.woff2?$
+\.xcf$
 \.xlsx?$
+\.xpm$
 \.xz$
 \.zip$
 /values\.yaml$

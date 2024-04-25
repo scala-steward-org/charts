@@ -7,21 +7,36 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Fetch history
         run: git fetch --prune --unshallow
 
       - name: Run chart-testing (lint)
         id: lint
-        uses: helm/chart-testing-action@v1.0.0-rc.1
-        with:
-          command: lint
+        uses: helm/chart-testing-action@v2.6.1
 
-      - name: Run kubeval
-        uses: stefanprodan/kube-tools@v1
-        with:
-          kubectl: 1.18.2
-          helmv3: 3.2.1
-          command: |
-            ./.github/kubeval.sh
+      - name: Run chart-testing (list-changed)
+        id: list-changed
+        env:
+          default_branch: ${{ github.event.repository.default_branch }}
+        run: |
+          changed=$(ct list-changed --target-branch "$default_branch")
+          if [ -n "$changed" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run chart-testing (lint)
+        if: steps.list-changed.outputs.changed == 'true'
+        env:
+          default_branch: ${{ github.event.repository.default_branch }}
+        run: ct lint --target-branch "$default_branch"
+
+      - name: Download kubeconform
+        run: |
+          go install github.com/yannh/kubeconform/cmd/kubeconform@latest
+          echo $(go env GOPATH)/bin >> "$GITHUB_PATH"
+
+      - name: Validate kubernetes objects
+        run: |
+          ./.github/validate-kube.sh

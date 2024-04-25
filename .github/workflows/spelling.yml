@@ -59,16 +59,16 @@ name: Spell checking
 on:
   push:
     branches:
-    - "**"
+      - "**"
     tags-ignore:
-    - "**"
+      - "**"
   pull_request:
     branches:
-    - "**"
+      - "**"
     types:
-    - 'opened'
-    - 'reopened'
-    - 'synchronize'
+      - 'opened'
+      - 'reopened'
+      - 'synchronize'
 
 jobs:
   spelling:
@@ -87,17 +87,19 @@ jobs:
       # note: If you use only_check_changed_files, you do not want cancel-in-progress
       cancel-in-progress: true
     steps:
-    - name: check-spelling
-      id: spelling
-      uses: check-spelling/check-spelling@v0.0.21
-      with:
-        config: .github/actions/spelling-data
-        suppress_push_for_open_pull_request: 1
-        checkout: true
-        check_file_names: 1
-        post_comment: 0
-        use_magic_file: 1
-        use_sarif: ${{ (!github.event.pull_request || (github.event.pull_request.head.repo.full_name == github.repository)) && 1 }}
-        check_extra_dictionaries: ''
-        extra_dictionaries:
-          cspell:software-terms/src/software-terms.txt
+      - name: check-spelling
+        id: spelling
+        uses: check-spelling/check-spelling@v0.0.22
+        with:
+          config: .github/actions/spelling-data
+          suppress_push_for_open_pull_request: ${{ github.actor != 'dependabot[bot]' && 1 }}
+          checkout: true
+          check_file_names: 1
+          post_comment: 0
+          use_magic_file: 1
+          report-timing: 1
+          warnings: bad-regex,binary-file,deprecated-feature,ignored-expect-variant,large-file,limited-references,no-newline-at-eof,noisy-file,non-alpha-in-dictionary,token-is-substring,unexpected-line-ending,whitespace-in-dictionary,minified-file,unsupported-configuration,no-files-to-check,unclosed-block-ignore-begin,unclosed-block-ignore-end
+          use_sarif: ${{ (!github.event.pull_request || (github.event.pull_request.head.repo.full_name == github.repository)) && 1 }}
+          check_extra_dictionaries: ''
+          extra_dictionaries: |
+            cspell:software-terms/dict/softwareTerms.txt
