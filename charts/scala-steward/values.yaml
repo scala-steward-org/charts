@@ -3,7 +3,7 @@ scalaStewardArgs:
   - /var/scala-steward/workspace
   - --repos-file
   - /opt/scala-steward/repos.md
-  - --vcs-api-host
+  - --forge-api-host
   - https://api.github.com
   - --git-ask-pass
   - /opt/scala-steward/password.sh
@@ -14,7 +14,7 @@ scalaStewardArgs:
 additionalScalaStewardArgs:
   - --git-author-email
   - MY_EMAIL
-  - --vcs-login
+  - --forge-login
   - MY_LOGIN
 
 additionalScalaStewardEnvs: {}
@@ -27,7 +27,7 @@ gitSecret: ""
 existingGitSecretName: ""
 
 image:
-  tag: 0.5.0-460-aad4fc41-SNAPSHOT
+  tag: 0.30.2
   repository: fthomas/scala-steward
   pullPolicy: IfNotPresent
 
