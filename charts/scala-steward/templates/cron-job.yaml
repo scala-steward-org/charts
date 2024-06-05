@@ -43,6 +43,11 @@ spec:
                 name: opt
               - mountPath: /var/scala-steward/workspace
                 name: workspace
+              {{- range $k, $v := .Values.additionalFiles }}
+              - mountPath: {{ $v.path }}
+                name: files
+                subPath: {{ $k }}
+              {{- end }}
           volumes:
             - name: opt
               configMap:
@@ -62,4 +67,14 @@ spec:
             {{- else }}
             - name: workspace
               emptyDir: {}
+            {{- end }}
+            {{- if .Values.additionalFiles }}
+            - name: files
+              configMap:
+                name: {{ include "scala-steward.fullname" . }}-files
+                items:
+                {{- range $k, $v := .Values.additionalFiles }}
+                  - key: {{ $k }}
+                    path: {{ $k }}
+                {{- end }}
             {{- end }}
