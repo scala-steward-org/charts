@@ -11,3 +11,15 @@ data:
     {{- tpl (.Files.Get "files/password.sh") . | nindent 4 }}
   scalafix.conf: |
     {{- .Values.scalafixConfig | nindent 4 }}
+{{- if .Values.additionalFiles }}
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "scala-steward.fullname" . }}-files
+data:
+  {{- range $k, $v := .Values.additionalFiles }}
+  {{ $k }}:
+    {{ $v.content | quote }}
+  {{- end }}
+{{- end }}

@@ -53,3 +53,11 @@ persistence:
   accessModes:
     - ReadWriteOnce
   size: 5Gi
+
+additionalFiles: {}
+# this can be used to make files available in the container, e. g. for authentication for an artifact repository
+# additionalFiles:
+#   nexusCredentials:
+#     path: /root/.sbt/1.0/credentials.sbt
+#     content: |
+#       credentials += Credentials(sys.env("NEXUS_REALM"), sys.env("NEXUS_HOST"), sys.env("NEXUS_USERNAME"), sys.env("NEXUS_PASSWORD"))
